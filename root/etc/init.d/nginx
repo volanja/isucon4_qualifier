@@ -19,7 +19,10 @@
 # Check that networking is up.
 [ "$NETWORKING" = "no" ] && exit 0
 
-nginx="/usr/sbin/nginx"
+# Normal
+#nginx="/usr/sbin/nginx"
+# OpenResty
+nginx="/usr/local/openresty/nginx/sbin/nginx"
 prog=$(basename $nginx)
 
 sysconfig="/etc/sysconfig/$prog"

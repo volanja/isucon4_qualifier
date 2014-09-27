@@ -26,3 +26,14 @@ ISUCON4 予選
 - [ ] `split`などCPUを使う処理があるか。あればRDBMSやmemcachedから取り出す。
 - [ ] 別プログラムを実行しているか。あれば内部でやるようにする。
 - [ ] ループしているところはないか。
+
+# コマンド
++ MySQLのリブート
+```
+service mysql restart
+```
+
++ MySQLのスロークエリの確認  
+```
+sudo mysqldumpslow /var/lib/mysql/slow-query.log
+```

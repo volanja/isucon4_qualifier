@@ -12,20 +12,24 @@ ISUCON4 予選
 - [ ] 動作ソフトウェアの確認  
   `ps aux`,`netstat -tanp`, `chkconfig |grep "3:on"`
 - [ ] [スロークエリの設定](https://gist.github.com/volanja/3aa32a5d88880fd9bd8f)
-- [ ] [NewRelicの設定]
+- [ ] NewRelicの設定
+- [ ] vimの設定
+- [ ] Github用秘密鍵の生成
+
 
 
 # 2回目のベンチマーク後にやること。
 - [ ] Rubyへの変更
 - [ ] [Rubyプロファイラ(NewRelic)](https://gist.github.com/volanja/e42bdb3e33583a3c85f0)
 - [ ] [Rubyプロファイラ(rack-lineprof)]
-- [ ] nginx(openrestry)のインストール
+- [ ] nginx(openrestry)のインストール [link](https://gist.github.com/volanja/91644f7489dd639b4b52)
 - [ ] memcachedのインストール
 
 # Notice
 - [ ] `split`などCPUを使う処理があるか。あればRDBMSやmemcachedから取り出す。
 - [ ] 別プログラムを実行しているか。あれば内部でやるようにする。
 - [ ] ループしているところはないか。
+- [ ] ファイルディスクリプタは不足してないか。
 
 # コマンド
 ## MySQL

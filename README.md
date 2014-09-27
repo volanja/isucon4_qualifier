@@ -28,6 +28,7 @@ ISUCON4 予選
 - [ ] ループしているところはないか。
 
 # コマンド
+## MySQL
 + MySQLのリブート
 ```
 service mysql restart
@@ -36,6 +37,18 @@ service mysql restart
 + MySQLのスロークエリの確認  
 ```
 sudo mysqldumpslow /var/lib/mysql/slow-query.log
+```
+
+## Git
++ ファイルを修正した時の操作
+```
+# gitに登録するファイルを指定する。
+git add <filename>
+# gitに登録する。
+# コミットメッセージの作成画面が出るので、メッセージを記入して:wqする。
+git commit
+# Githubへのアップロード
+git push
 ```
 
 + Githubとの同期

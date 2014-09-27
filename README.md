@@ -14,9 +14,9 @@ ISUCON4 予選
 - [ ] [スロークエリの設定](https://gist.github.com/volanja/3aa32a5d88880fd9bd8f)
 - [ ] NewRelicの設定
 - [ ] vimの設定
+- [ ] [Githubユーザの登録](https://gist.github.com/volanja/0389621fce8aa15e2670)
 - [ ] Github用秘密鍵の生成
-
-
+- [ ] どこかの時点でmyAMIを作る。基本的にはmiyaのところでISUCONする。
 
 # 2回目のベンチマーク後にやること。
 - [ ] Rubyへの変更

@@ -28,9 +28,6 @@ autocmd Filetype ruby setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 textwi
 autocmd FileType ruby compiler ruby
 "-----------------------------------
 
-hi Search	guifg=#90fff0 guibg=#2050d0	ctermfg=white ctermbg=darkblue cterm=underline term=underline
-hi Comment	guifg=#80a0ff ctermfg=darkred
-
 set autoindent smartindent
 set shiftwidth=4
 set enc=utf-8
@@ -39,7 +36,6 @@ set backspace=indent,eol,start
 
 set list
 set listchars=tab:>-,extends:<,trail:-,eol:<
-highlight SpecialKey term=underline ctermfg=darkgray guifg=darkgray
 
 
 " NeoBundle
@@ -57,7 +53,27 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'vim-ruby/vim-ruby'
 
 "syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
+
+"=======================================================
+" colorscheme
+" ------------------------------------------------------
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
+
+syntax on
+set background=dark
+if ($ft=='ruby')
+  colorscheme Tomorrow-Night-Bright
+else
+  colorscheme hybrid
+endif
+
+hi Search	guifg=#90fff0 guibg=#2050d0	ctermfg=white ctermbg=darkblue cterm=underline term=underline
+hi Comment	guifg=#80a0ff ctermfg=darkred
+hi LineNr ctermbg=black guifg=#8F908A
+hi SpecialKey term=underline ctermfg=darkgray guifg=darkgray

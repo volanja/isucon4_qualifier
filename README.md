@@ -37,3 +37,8 @@ service mysql restart
 ```
 sudo mysqldumpslow /var/lib/mysql/slow-query.log
 ```
+
++ Githubとの同期
+```
+./our_scripts/git-pull.sh
+```

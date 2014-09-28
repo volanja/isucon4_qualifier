@@ -3,11 +3,9 @@ require 'digest/sha2'
 require 'mysql2-cs-bind'
 require 'rack-flash'
 require 'json'
-require 'rack-lineprof'
 
 module Isucon4
   class App < Sinatra::Base
-    use Rack::Lineprof, profile: 'app.rb'
     use Rack::Session::Cookie, secret: ENV['ISU4_SESSION_SECRET'] || 'shirokane'
     use Rack::Flash
     set :public_folder, File.expand_path('../../public', __FILE__)
@@ -124,6 +122,10 @@ module Isucon4
         threshold = config[:user_lock_threshold]
 
         not_succeeded = db.xquery('SELECT user_id, login FROM (SELECT user_id, login, MAX(succeeded) as max_succeeded, COUNT(1) as cnt FROM login_log GROUP BY user_id) AS t0 WHERE t0.user_id IS NOT NULL AND t0.max_succeeded = 0 AND t0.cnt >= ?', threshold)
+
+#not_succeeded = db.xquery('SELECT user_id, login FROM (SELECT user_id, login, MAX(succeeded) as max_succeeded, COUNT(1) as cnt FROM login_log  WHERE user_id = user_id GROUP BY user_id having cnt >= ? and max_succeeded = 0) AS t0', threshold)
+
+#not_succeeded = db.xquery('SELECT user_id, login FROM (SELECT user_id, login, MAX(succeeded) as max_succeeded, COUNT(1) as cnt FROM login_log GROUP BY user_id) AS t0 WHERE t0.user_id = t0.user_id AND t0.max_succeeded = 0 AND t0.cnt >= ?', threshold)
 
         user_ids.concat not_succeeded.each.map { |r| r['login'] }
 
